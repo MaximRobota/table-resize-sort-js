@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<link href='./table-resize.css' rel='stylesheet'>
+
+  </head>
+
+  <body class="logged-in env-production">
+  <table id="example" class="sort">
+      <thead>
+        <tr>
+          <th data-sort-default style="width: 97px;"><div class="resize-base"><div class="resize-elem"></div><div class="resize-text">#</div></div></th>
+          <th style="width: 553px;"><div class="resize-base"><div class="resize-elem"></div><div class="resize-text">Name</div></div></th>
+          <th style="width: 403px;"><div class="resize-base"><div class="resize-elem"></div><div class="resize-text">Birthday</div></div></th>
+          <th style="width: 473px;"><div class="resize-base"><div class="resize-elem"></div><div class="resize-text">Grocery item</div></div></th>
+          <th data-sort-method="none" style="width: 267px;">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>11</td>
+          <td>Gonzo the Great</td>
+          <td>12-2-70</td>
+          <td>Radishes</td>
+          <td>$0.63</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Ernie</td>
+          <td>10/11/69</td>
+          <td>Fish</td>
+          <td>$12.09</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Bert</td>
+          <td>10/11/1969</td>
+          <td>Broccoli</td>
+          <td>$0.79</td>
+        </tr>
+        <tr>
+          <td><input type="number" max="1000" class="" id="iterations" placeholder="0-1000" value="54"></td>
+          <td>Cookie Monster</td>
+          <td>1/09/1966</td>
+          <td>Oreo cookies</td>
+          <td>$2.78</td>
+        </tr>
+        <tr>
+          <td><input type="number" max="1000" class="" id="iterations" placeholder="0-1000" value="53"></td>
+          <td>Kermit</td>
+          <td>12-05-1955</td>
+          <td>Granola</td>
+          <td>$4.73</td>
+        </tr>
+        <tr>
+          <td><input type="number" max="1000" class="" id="iterations" placeholder="0-1000" value="55"></td>
+          <td>Sam the Eagle</td>
+          <td>04/07/75</td>
+          <td>Corn dog</td>
+          <td>$5.50</td>
+        </tr>
+      </tbody>
+    </table>
+<script src='table-resize.js'></script>
+
+<script>
+	  new TableResize(document.getElementById('example'), {distance: 0, minWidth: 60, restoreState: false, fixed: true});
+	var table = document.getElementById('example');
+	var sort = new Tablesort(table);
+
+	table.addEventListener('beforeSort', function() {
+	  //alert('Table is about to be sorted!');
+	});
+
+	table.addEventListener('afterSort', function() {
+	  //alert('Table sorted!');
+	});
+</script>
+  </body>
+</html>
